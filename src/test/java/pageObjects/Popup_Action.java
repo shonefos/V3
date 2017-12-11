@@ -25,6 +25,8 @@ public class Popup_Action {
         return element;
     }
 
+
+
     public static WebElement popup_tittle(WebDriver driver) {
 
         element = driver.findElement(By.cssSelector("div.panel > div.title"));

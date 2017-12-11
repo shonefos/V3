@@ -61,7 +61,7 @@ public class V3 {
 
         //Log in
 
-        LogIn_Page.txtbx_UserName(driver).sendKeys("nenads1979@gmail.com");
+        LogIn_Page.txtbx_UserName(driver).sendKeys("savichi@stage.com");
         LogIn_Page.txtbx_Password(driver).sendKeys("1");
         Thread.sleep(1000);
         LogIn_Page.btn_LogIn(driver).click();
@@ -508,7 +508,23 @@ public class V3 {
 
         }
 
-        // Nastaviti sa cherry (prihvati, odbaci...)--------------------------------
+        EmptyBet.lnk_EmptyBet_Confirm(driver).click();
+        Thread.sleep(2000);
+        Ticket_Create.lnk_submitbutton(driver).click();
+
+        Thread.sleep(10000);
+
+        String ticketEB = driver.findElement(By.cssSelector("div.panel > div.title")).getText();
+        System.out.println(ticketEB);
+
+        //naci nacin da se uhvati pravi pop-up
+
+        WebDriverWait waitzzz = new WebDriverWait(driver, 100);
+        Object ty = waitzzz.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("#ticket-output")));
+
+        EmptyBet.lnk_EmptyBet_Confirm(driver).click();
+        Thread.sleep(4000);
+        Popup_Action.popup_button(driver).click();
 
         Thread.sleep(10000);
 
